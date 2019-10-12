@@ -17,7 +17,7 @@ if [ "$_IP" ]; then
   printf "My IP address is %s\n" "$_IP"
 fi
 
-python /home/pi/Documents/omni_rover/omni_l9110s.py &
+python /home/pi/Documents/omni_rover/omni_rover_L9110S.py &
 
 
 exit 0
