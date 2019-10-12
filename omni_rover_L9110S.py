@@ -175,23 +175,50 @@ print "buttons:" + str(n_bu)
 n_ha = joystick.get_numhats()
 print "hat:" + str(n_ha)
 
-
-# Microsoft X-Box 360 pad
-#print "Microsoft X-Box 360 pad
-#axis_l = 1
-#axis_r = 4 
-
-# Smart JC-U3912T
-print "Smart JC-U3912T"
 axis_l_lr = 0
 axis_l_ud = 1
-axis_r_lr = 3 
-axis_r_ud = 2 
+axis_r_lr = 2 
+axis_r_ud = 3 
 
-# Nintendo Wii U Pro Controller
-#print "Nintendo Wii U Pro Controller"
-#axis_l = 1
-#axis_r = 3 
+if joystick.get_name() == "Microsoft X-Box 360 pad":
+  print "Microsoft X-Box 360 pad"
+  axis_l_lr = 0
+  axis_l_ud = 1
+  axis_r_lr = 3 
+  axis_r_ud = 2 
+elif joystick.get_name() == "Smart JC-U3912T":
+  print "Smart JC-U3912T"
+  axis_l_lr = 0
+  axis_l_ud = 1
+  axis_r_lr = 3 
+  axis_r_ud = 2 
+elif joystick.get_name() == "Nintendo Wii Remote Pro Controller":
+  print "Nintendo Wii Remote Pro Controller"
+  axis_l_lr = 0
+  axis_l_ud = 1
+  axis_r_lr = 2 
+  axis_r_ud = 3 
+elif joystick.get_name() == "PC Game Controller       ":
+  print "JC-FU2912F"
+  axis_l_lr = 0
+  axis_l_ud = 1
+  axis_r_lr = 2 
+  axis_r_ud = 3 
+elif joystick.get_name() == "Sony PLAYSTATION(R)3 Controller":
+  print "Sony PLAYSTATION(R)3 Controller"
+  axis_l_lr = 0
+  axis_l_ud = 1
+  axis_r_lr = 3 
+  axis_r_ud = 4 
+else:
+  print "unknown gamepad"
+
+
+
+
+
+
+
 
 # 状態データの保管場所
 #axis   = [0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
@@ -291,64 +318,4 @@ while 1:
       print("stop2")
       motor_stop()
 
-
-
-
-
-
-
-
-
-
-
-
-
-'''
-
-  if hat[0] == 1:
-    print("hat0==1")
-  if hat[1] == 1:
-    print("hat1==1")
-
-  if hat[0] == 0 and hat[1] == 0: #  0  0
-    # nop
-    print("stop")
-    motor_stop()
-  elif hat[0] == 0 and hat[1] == 1: #  0  1
-    # up
-    print("forward")
-    motor_forward()
-  elif hat[0] ==  0 and hat[1] == -1: #  0 -1
-    # down
-    print("reverse")
-    motor_reverse()
-  elif hat[0] ==  1 and hat[1] ==  0: #  1  0
-    # left_
-    print("right")
-    motor_right()
-  elif hat[0] ==  1 and hat[1] ==  1: #  1  1
-    # up right 
-    print("forward_right")
-    motor_forward_right()
-  elif hat[0] ==  1 and hat[1] == -1: #  1 -1
-    # down right
-    print("reverse right")
-    motor_reverse_right()
-  elif hat[0] == -1 and hat[1] ==  0: # -1  0
-    # left
-    print("left")
-    motor_left()
-  elif hat[0] == -1 and hat[1] ==  1: # -1  1
-    # up left
-    print("forward_left")
-    motor_forward_left()
-  elif hat[0] == -1 and hat[1] == -1: # -1 -1
-    # down left
-    print("reverse_left")
-    motor_reverse_left()
-  else:
-    # nop
-    print("stop2")
-    motor_stop()
-'''
 
